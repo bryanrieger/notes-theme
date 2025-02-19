@@ -4,6 +4,9 @@
 <body>
   {{ partial "header.html" . }}
   <main>
+    {{ if .IsHome }}
+      {{ partial "profile.html" . }}
+    {{ end }}
 	{{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
