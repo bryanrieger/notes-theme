@@ -346,3 +346,133 @@
 	  }
 	  
 	}
+	
+	/* -- body > nav ----------------------------------------------------------- */
+	  
+	  body > nav {
+		background: var(--color-background);
+		font-family: var(--font-serif);
+		padding: 1rem 1rem 2rem 1rem;
+		position: absolute;
+		top: 0; right: 0;
+		width: 100%;
+		z-index: 2;
+	  }
+	  
+	  body > nav ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	  }
+	  
+	  body > nav > *:last-child {
+		margin-top: 2rem;
+	  }
+	  
+	  @media (min-width: 28.5rem) {
+		
+		body > nav {
+		  border-radius: 1rem;
+		  box-shadow: 0 0.0625rem 0.25rem var(--color-shadow);
+		  max-width: 26.5rem;
+		  padding: 1rem 2rem 2rem 2rem;
+		  position: absolute;
+		  top: 1.0rem; right: 1rem;
+		}
+		
+		body > nav:after {
+		  content: " ";
+		  display: block;
+		  height: 0.0625rem;
+		  position: relative; top: 5rem;
+		}
+		
+	  }
+	  
+	  /* -- body > main ---------------------------------------------------------- */
+	  
+	  body > main {}
+	  
+	  /* -- body > footer -------------------------------------------------------- */
+	  
+	  body > footer {
+		align-items: center;
+		display: flex;
+		font-family: var(--font-sans);
+		margin-top: 2rem;
+		padding: 1rem 0 2rem 0;
+	  }
+	  
+	  body > footer p {
+		flex: 1;
+		font-weight: 500;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	  }
+	  
+	  body > footer a,
+	  body > footer a:link,
+	  body > footer a:visited {
+		cursor: pointer;
+		color: var(--color-foreground);
+		fill: var(--color-foreground);
+	  }
+	  
+	  @media (hover: hover) {
+		
+		body > footer a:hover,
+		body > footer a:focus {
+		  color: var(--color-hover);
+		  fill: var(--color-hover);
+		}
+		body > footer a:active {
+		  color: var(--color-active);
+		  fill: var(--color-active);
+		}
+		
+	  }
+	  
+	  
+	  
+	  /* -- .social -------------------------------------------------------------- */
+	  
+	  .social {
+		align-items: center;
+		display: flex;
+		margin-right: -0.625rem;
+		justify-content: flex-end;
+	  }
+	  .social li:first-of-type:not(:has(a)) {
+		flex: 1;
+		font-family: var(--font-sans);
+		overflow: hidden;
+	  }
+	  .social li:first-of-type:not(:has(a)) span {
+		display: inline-block; 
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	  }
+	  .social  li {
+		display: flex;
+	  }
+	  .social a span {
+		position: absolute; top: -9999rem; left: -9999rem;
+	  }
+	  .social a,
+	  .social a:link {
+		color: var(--color-foreground);
+		fill: var(--color-foreground);
+	  }
+	  @media (hover: hover) {
+		.social a:hover,
+		.social a:focus  {
+		  color: var(--color-hover);
+		  fill: var(--color-hover);
+		}
+		.social a:active {
+		  color: var(--color-active);
+		  fill: var(--color-active);
+		}
+	  }

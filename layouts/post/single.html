@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article>
+  {{ if .Title }}
   <header>
 	{{ with .Title }}
     <h1>{{ . }}</h1>
@@ -13,9 +14,9 @@
       {{ end }}
     </h2>
   </header>
-  <section class="e-content post-body">
-      {{ .Content }}
-  </section>
+  {{ end }}
+  
+  {{ .Content }}
 
   {{ if .Site.Params.include_conversation }}
   <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
