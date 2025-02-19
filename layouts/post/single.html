@@ -1,8 +1,8 @@
 {{ define "main" }}
-<article class="h-entry post">
+<article>
   <header>
 	{{ with .Title }}
-    <h1 class="p-name">{{ . }}</h1>
+    <h1>{{ . }}</h1>
     {{ end }}
     <h2 class="headline">
       <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">
