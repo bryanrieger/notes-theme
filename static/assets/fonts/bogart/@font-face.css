@@ -1,0 +1,19 @@
+@font-face { font-family: 'Bogart'; font-weight: 100; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/thin.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 100; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/thin-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 200; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/extralight.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 200; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/extralight-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 300; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/light.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 300; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/light-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 500; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/medium.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 500; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/medium-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 600; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/semibold.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 600; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/semibold-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 800; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/extrabold.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 800; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/extrabold-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 900; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/black.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart'; font-weight: 900; font-style: italic; font-display: swap; src: url(/assets/fonts/bogart/black-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Bogart"; src: local("Georgia"); size-adjust: 100.0%; }

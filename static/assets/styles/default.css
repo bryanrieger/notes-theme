@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+/* PREFLIGHT --------------------------------------------------------------- */
+
+@layer preflight {
+  *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; }
+  ::before, ::after { --content: ''; }
+  html, :host { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Arial', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-feature-settings: normal; font-variation-settings: normal; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; line-height: inherit; }
+  button, [role="button"] { cursor: pointer; }
+  hr { height: 0; color: inherit; }
+  h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+  a { color: inherit; text-decoration: inherit; }
+  b, strong { font-weight: bolder; }
+  pre { font-size: 1em; }
+  blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0; }
+  ol, ul { list-style: none; margin: 0; padding: 0; }
+  img, svg, video, canvas, audio, object { display: block; vertical-align: middle; }
+  img, video { max-width: 100%; height: auto; }
+}
+
+/* FONTS ------------------------------------------------------------------- */
+
+@font-face { font-family: 'Rooney'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Rooney"; src: local("Georgia"); size-adjust: 99.0%; }
+
+@font-face { font-family: 'Rooney Sans'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/regular-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/bold.woff2) format('woff2'); }
+@font-face { font-family: 'Rooney Sans'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/bold-italic.woff2) format('woff2'); }
+@font-face { font-family: "_Rooney Sans"; src: local("Arial"); size-adjust: 93.5%; }
+
+/* VARIABLES --------------------------------------------------------------- */
+
+/* VARIABLES --------------------------------------------------------------- */
+
+:root { 
+  
+	/* -- var-colors ------------------------------------------------------- */
+	
+	--color-background: #ffffff;
+	--color-foreground: #333333;
+	--color-accent: #eb6345;
+	--color-mark: #fff01b;
+	--color-strike: #e4008a;
+	--color-active: #ad4f1f;
+	--color-link: #5b5bf4;
+	--color-hover: #f36f2d;
+	--color-visited: #4c4cc9;
+	--color-shade: #000000;
+	--color-shadow: rgb(from var(--color-shade) r g b / 0.25);
+	--color-overlay: rgb(from var(--color-shade) r g b / 0.10);
+  
+	/* -- var-fonts ---------------------------------------------------------- */
+	
+	--font-sans: 'Rooney Sans', '_Rooney Sans', 'Arial', sans-serif;
+	--font-serif: 'Rooney', '_Rooney', 'Georgia', serif;
+  
+	/* -- var-sizes ---------------------------------------------------------- */
+	
+	--max-width: 44rem;
+	--spacing: 1rem;
+  
+  }
+  
+  @media (min-width: 28.5rem) {
+	:root {
+	  --spacing: 2rem;
+	}
+  }
+  
+  
+	/* ELEMENTS ---------------------------------------------------------------- */
+	
+	
+	/* -- a -------------------------------------------------------------------- */
+	
+	a,
+	a:link {
+	  cursor: pointer;
+	  text-decoration: none;
+	}
+	
+	/* -- body ----------------------------------------------------------------- */
+	
+	body {
+	  background-color: var(--color-background);
+	  color: var(--color-foreground);
+	  font-family: var(--font-serif);
+	  font-optical-sizing: auto;
+	  font-size: 1.125rem;
+	  font-weight: 400; 
+	  margin: 0 auto;
+	  max-width: var(--max-width);
+	  padding: 0 var(--spacing);
+	  position: relative;
+	}
+	
+	@media (min-width: 60rem) {
+	  
+	  body:has(.spread) {
+		--max-width: 84rem;
+	  }
+	  
+	}
+	
+	/* -- b, strong ------------------------------------------------------------ */
+	
+	b,
+	strong, {
+	  font-weight: 700;
+	}
+	
+	/* -- i, em ---------------------------------------------------------------- */
+	
+	i, 
+	em {
+	  font-style: italic;
+	}
+	
+	/* -- figure --------------------------------------------------------------- */
+	
+	figure {
+	  margin: 2rem 0 2rem 0;
+	}
+	
+	figcaption {
+	  font-size: 1rem;
+	  font-style: italic;
+	  padding: 0 1rem;
+	  text-align: center;
+	}
+	
+	/* -- h{n} ----------------------------------------------------------------- */
+	
+	h1 {
+	  font-size: 2.5rem;
+	  font-weight: 500;
+	}
+  
+	h2 {
+	  font-size: 2.0rem;
+	  font-weight: 600;
+	}
+  
+	h3 {
+	  font-size: 1.5rem;
+	  font-weight: 700;
+	}
+  
+	h4 {
+	  font-size: 1.25rem;
+	  font-weight: 700;
+	}
+  
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+	  font-family: var(--font-header);
+	  line-height: 100%;
+	  margin: 3rem 0 0.5rem 0;
+	}
+  
+	section > :first-child:is(h1, h2, h3, h4, h5, h6) {
+	  margin-top: 1rem;
+	}
+	
+	/* -- hr ------------------------------------------------------------------- */
+	
+	hr {
+	  width: 100%;
+	  height: auto;
+	}
+	
+	/* -- img ------------------------------------------------------------------ */
+	
+	img {
+	  width: 100%;
+	  height: auto;
+	}
+	
+	/* -- mark ----------------------------------------------------------------- */
+	
+	mark {
+	  color: var(--color-foreground);
+	  background-color: var(--color-mark);
+	}
+	
+	/* -- ol ------------------------------------------------------------------- */
+	
+	ol {
+	  list-style: outside;
+	  margin: 2rem 0 2rem 2rem;
+	}
+	
+	/* -- section -------------------------------------------------------------- */
+	
+	section {
+	  overflow-y: clip;
+	  margin: 2rem 0 3rem 0;
+	  padding: 2rem 0 2rem 0;
+	}
+  
+	
+	/* LAYOUT ------------------------------------------------------------------ */
+	
+	
+	/* -- body > header -------------------------------------------------------- */
+	
+	body > header {
+	  align-items: center;
+	  display: flex;
+	  font-family: var(--font-sans);
+	  padding-top: 0.5rem;
+	  position: relative;
+	}
+	
+	body > header a {
+	  margin-left: -0.5rem
+	}
+	
+	body > header a,
+	body > header a:link,
+	body > header a:visited,
+	body > header label {
+	  cursor: pointer;
+	  color: var(--color-foreground);
+	  fill: var(--color-foreground);
+	}
+	
+	body > header h1 {
+	  align-items: center;
+	  display:flex;
+	  flex: 1;
+	  font-family: var(--font-sans);
+	  font-size: 1.25rem;
+	  font-weight: 500;
+	  height: 100%;
+	  justify-content: center;
+	  line-height: initial;
+	  margin: 0;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	}
+	
+	body > header h1 a {
+	  margin-left: 0;
+	  overflow: hidden;
+	  padding: 0 0.5rem;
+	  text-overflow: ellipsis;
+	}
+	body > header h1 span {
+	  display: block;
+	  position: relative;
+	  top: 0; left: 0;
+	}
+	body > header h1 span ~ svg:last-of-type {
+	  display: none;
+	}
+	
+	body > header label {
+	  cursor: pointer;
+	  margin-right: -0.5rem;
+	  padding: 0;
+	  z-index: 3;
+	}
+	
+	@media (hover: hover) {
+	  
+	  body > header a:hover,
+	  body > header a:focus,
+	  body > header label:hover,
+	  body > header label:focus  {
+		color: var(--color-hover);
+		fill: var(--color-hover);
+	  }
+	  body > header a:active,
+	  body > header label:active {
+		color: var(--color-active);
+		fill: var(--color-active);
+	  }
+	  
+	}
+	
+	body > header span {
+	  position: absolute; top: -9999rem; left: -9999rem;
+	}
+	
+	body > header:has(input:checked) ~ main,
+	body > header:has(input:checked) ~ footer, 
+	body > header:has(input:checked) ~ svg {
+	  display: none;
+	}
+	body > header:has(input:checked) + nav {
+	  display: block;
+	}
+	body > header:has(input:not(:checked)) + nav {
+	  display: none;
+	}
+	
+	@media (min-width: 28.5rem) {
+	  
+	  body > header {
+		padding-top: 1.25rem;
+	  }
+	  
+	  body > header h1 span ~ svg:first-of-type {
+		display: none;
+	  }
+	  
+	  body > header h1 span ~ svg:last-of-type {
+		display: initial;
+		z-index: -1;
+	  }
+	  
+	  body > header:has(input:checked) ~ main {
+		display: block;
+	  }
+	  
+	  body > header:has(input:checked) ~ footer {
+		display: flex;
+	  }
+	  
+	  body > header:has(input:checked) ~ main,
+	  body > header:has(input:checked) ~ footer {
+		pointer-events: none;
+		-webkit-user-select: none;
+		user-select: none; 
+	  }
+	  
+	  body:has(> header input:checked):after {
+		background: var(--color-overlay);
+		content: "";
+		display: block;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100vw; height: 100%;
+		z-index: 1;
+	  }
+	  
+	}
