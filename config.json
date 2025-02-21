@@ -1,2 +1,5 @@
 {
+	"minify": {
+		"minifyOutput": true
+	}
 }
