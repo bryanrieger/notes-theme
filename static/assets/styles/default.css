@@ -82,10 +82,28 @@
   
   /* -- a -------------------------------------------------------------------- */
   
-  a,
+a,
   a:link {
 	cursor: pointer;
+	color: var(--color-link);
+	fill: var(--color-link);
 	text-decoration: none;
+  }
+  a:visited {
+	color: var(--color-visited);
+	fill: var(--color-visited);
+  }
+  @media (hover: hover) {
+	a:hover,
+	a:focus  {
+	  color: var(--color-hover);
+	  fill: var(--color-hover);
+	  outline: none;
+	}
+	a:active {
+	  color: var(--color-active);
+	  fill: var(--color-active);
+	}
   }
   
   /* -- article -------------------------------------------------------------- */
