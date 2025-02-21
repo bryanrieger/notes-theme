@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<ol data-sort="reverse">
+<ol id="feed" data-sort="reverse">
 
 {{ if or .IsHome .Site.Params.paginate_categories }}
 	{{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }}
