@@ -3,12 +3,13 @@
   {{ if .Title }}
   <header>
 	<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <p><time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+    <p><time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" data-format="short">{{ .Date.Format "January 2, 2006" }}</time></p>
   </header>
   {{ end }}
   {{ .Content }}
   <footer>
     <p><a href="{{ .Permalink }}" rel="permalink">notes.bryanrieger.com{{ .RelPermalink }}</a></p>
+    <p><time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}" data-format="short">{{ .Date.Format "January 2, 2006" }}</time></p>
   </footer>
 </article>
 </li>
