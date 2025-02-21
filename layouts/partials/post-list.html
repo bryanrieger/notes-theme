@@ -1,4 +1,4 @@
-<ul>
+<ol id="feed" data-sort="reverse">
 
 {{ if or .IsHome .Site.Params.paginate_categories }}
 	{{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") }}
@@ -13,7 +13,7 @@
 	{{ end }}
 {{ end }}
 
-</ul>
+</ol>
 
 {{ if .IsHome }}
 	{{ if .Site.Params.paginate_home }}
