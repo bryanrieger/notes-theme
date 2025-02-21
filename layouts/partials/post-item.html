@@ -2,13 +2,12 @@
 <article>
   {{ if .Title }}
   <header>
-	<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <p><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" data-format="short">{{ .Date.Format "January 2, 2006" }}</time></p>
+	<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
   </header>
   {{ end }}
   {{ .Content }}
   <footer>
-    <p><a href="{{ .Permalink }}" rel="permalink">notes.bryanrieger.com{{ .RelPermalink }}</a></p>
+    <p><a href="{{ .Permalink }}" rel="permalink"><svg class="icon" viewBox="0 0 32 32" width="16" height="16"><use href="#link.icon"/></svg>notes.bryanrieger.com{{ .RelPermalink }}</a></p>
     <p><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}" data-format="short">{{ .Date.Format "January 2, 2006" }}</time></p>
   </footer>
 </article>

@@ -109,14 +109,6 @@
 	position: relative;
   }
   
-  @media (min-width: 60rem) {
-	
-	body:has(.spread) {
-	  --max-width: 84rem;
-	}
-	
-  }
-  
   /* -- b, strong ------------------------------------------------------------ */
   
   b,
@@ -377,12 +369,12 @@
 	  margin-top: 2rem;
 	}
 	
-	@media (min-width: 28.5rem) {
+	@media (min-width: 26.5rem) {
 	  
 	  body > nav {
 		border-radius: 1rem;
 		box-shadow: 0 0.0625rem 0.25rem var(--color-shadow);
-		max-width: 26.5rem;
+		max-width: 24rem;
 		padding: 1rem 2rem 2rem 2rem;
 		position: absolute;
 		top: 1.0rem; right: 1rem;
@@ -469,6 +461,61 @@
 	  
 	}
 	
+	/* -- .pages --------------------------------------------------------------- */
+	
+	.pages {
+	  align-items: center;
+	  display: flex;
+	  font-family: var(--font-sans);
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	  position: relative;
+	}
+	
+	.pages a,
+	.pages li,
+	.pages span {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	}
+	
+	
+	
+	.pages li {
+	  display: flex;
+	  flex: 1;
+	}
+	
+	.pages li:has(a[rel=prev]) {
+	  margin-left: -0.5rem;
+	}
+	
+	.pages li:has(a[rel=next]) {
+	  justify-content: flex-end;
+	  margin-right: -0.5rem;
+	}
+	
+	.pages a {
+	  align-items: center;
+	  display: flex;
+	}
+	
+	.pages a[rel=prev] {
+	  flex-direction: row-reverse;
+	  margin-left: -0.5rem;
+	  padding-right: 1rem;
+	}
+	
+	.pages a[rel=next] {
+	  margin-left: -0.5rem;
+	  padding-left: 1rem;
+	}
+	
+	.pages svg {
+	  flex-shrink: 0;
+	}
 	
 	/* -- .icon-{n} ------------------------------------------------------------ */
 	
