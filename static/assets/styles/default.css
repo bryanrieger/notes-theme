@@ -21,6 +21,11 @@
 
 /* FONTS ------------------------------------------------------------------- */
 
+@font-face { font-family: 'Bogart Alt'; font-weight: 300; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/light.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/regular.woff2) format('woff2'); }
+@font-face { font-family: 'Bogart Alt'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/bogart/alt/bold.woff2) format('woff2'); }
+@font-face { font-family: "_Bogart"; src: local("Georgia"); size-adjust: 100.0%; }
+
 @font-face { font-family: 'Rooney'; font-weight: 400; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/regular.woff2) format('woff2'); }
 @font-face { font-family: 'Rooney'; font-weight: 400; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/regular-italic.woff2) format('woff2'); }
 @font-face { font-family: 'Rooney'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/bold.woff2) format('woff2'); }
@@ -32,8 +37,6 @@
 @font-face { font-family: 'Rooney Sans'; font-weight: 700; font-style: normal; font-display: swap; src: url(/assets/fonts/rooney/sans/bold.woff2) format('woff2'); }
 @font-face { font-family: 'Rooney Sans'; font-weight: 700; font-style: italic; font-display: swap; src: url(/assets/fonts/rooney/sans/bold-italic.woff2) format('woff2'); }
 @font-face { font-family: "_Rooney Sans"; src: local("Arial"); size-adjust: 93.5%; }
-
-/* VARIABLES --------------------------------------------------------------- */
 
 /* VARIABLES --------------------------------------------------------------- */
 
@@ -58,10 +61,11 @@
 	
 	--font-sans: 'Rooney Sans', '_Rooney Sans', 'Arial', sans-serif;
 	--font-serif: 'Rooney', '_Rooney', 'Georgia', serif;
+	--font-header: 'Bogart', '_Bogart', 'Georgia', serif;
   
 	/* -- var-sizes ---------------------------------------------------------- */
 	
-	--max-width: 44rem;
+	--max-width: 37.75rem;
 	--spacing: 1rem;
   
   }
@@ -73,406 +77,401 @@
   }
   
   
-	/* ELEMENTS ---------------------------------------------------------------- */
+  /* ELEMENTS ---------------------------------------------------------------- */
+  
+  
+  /* -- a -------------------------------------------------------------------- */
+  
+  a,
+  a:link {
+	cursor: pointer;
+	text-decoration: none;
+  }
+  
+  /* -- body ----------------------------------------------------------------- */
+  
+  body {
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+	font-family: var(--font-serif);
+	font-optical-sizing: auto;
+	font-size: 1.125rem;
+	font-weight: 400; 
+	margin: 0 auto;
+	max-width: var(--max-width);
+	padding: 0 var(--spacing);
+	position: relative;
+  }
+  
+  @media (min-width: 60rem) {
 	
-	
-	/* -- a -------------------------------------------------------------------- */
-	
-	a,
-	a:link {
-	  cursor: pointer;
-	  text-decoration: none;
+	body:has(.spread) {
+	  --max-width: 84rem;
 	}
 	
-	/* -- body ----------------------------------------------------------------- */
+  }
+  
+  /* -- b, strong ------------------------------------------------------------ */
+  
+  b,
+  strong, {
+	font-weight: 700;
+  }
+  
+  /* -- i, em ---------------------------------------------------------------- */
+  
+  i, 
+  em {
+	font-style: italic;
+  }
+  
+  /* -- figure --------------------------------------------------------------- */
+  
+  figure {
+	margin: 2rem 0 2rem 0;
+  }
+  
+  figcaption {
+	font-size: 1rem;
+	font-style: italic;
+	padding: 0 1rem;
+	text-align: center;
+  }
+  
+  /* -- h{n} ----------------------------------------------------------------- */
+  
+  h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+  }
+
+  h2 {
+	font-size: 2.0rem;
+	font-weight: 600;
+  }
+
+  h3 {
+	font-size: 1.5rem;
+	font-weight: 700;
+  }
+
+  h4 {
+	font-size: 1.25rem;
+	font-weight: 700;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+	font-family: var(--font-header);
+	line-height: 100%;
+	margin: 3rem 0 0.5rem 0;
+  }
+
+  section > :first-child:is(h1, h2, h3, h4, h5, h6) {
+	margin-top: 1rem;
+  }
+  
+  /* -- hr ------------------------------------------------------------------- */
+  
+  hr {
+	width: 100%;
+	height: auto;
+  }
+  
+  /* -- img ------------------------------------------------------------------ */
+  
+  img {
+	width: 100%;
+	height: auto;
+  }
+  
+  /* -- mark ----------------------------------------------------------------- */
+  
+  mark {
+	color: var(--color-foreground);
+	background-color: var(--color-mark);
+  }
+  
+  /* -- ol ------------------------------------------------------------------- */
+  
+  ol {
+	list-style: outside;
+	margin: 2rem 0 2rem 2rem;
+  }
+  
+  /* -- section -------------------------------------------------------------- */
+  
+  section {
+	overflow-y: clip;
+	margin: 2rem 0 3rem 0;
+	padding: 2rem 0 2rem 0;
+  }
+
+  
+  /* LAYOUT ------------------------------------------------------------------ */
+  
+  
+  /* -- body > header -------------------------------------------------------- */
+  
+  body > header {
+	align-items: center;
+	display: flex;
+	font-family: var(--font-sans);
+	padding-top: 0.5rem;
+	position: relative;
+  }
+  
+  body > header a {
+	margin-left: -0.5rem
+  }
+  
+  body > header a,
+  body > header a:link,
+  body > header a:visited,
+  body > header label {
+	cursor: pointer;
+	color: var(--color-foreground);
+	fill: var(--color-foreground);
+  }
+  
+  body > header h1 {
+	align-items: center;
+	display:flex;
+	flex: 1;
+	font-family: var(--font-sans);
+	font-size: 1.25rem;
+	font-weight: 500;
+	height: 100%;
+	justify-content: center;
+	line-height: initial;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  }
+  
+  body > header h1 a {
+	margin-left: 0;
+	overflow: hidden;
+	padding: 0 0.5rem;
+	text-overflow: ellipsis;
+  }
+  body > header h1 span {
+	display: block;
+	position: relative;
+	top: 0; left: 0;
+  }
+  body > header h1 span ~ svg:last-of-type {
+	display: none;
+  }
+  
+  body > header label {
+	cursor: pointer;
+	margin-right: -0.5rem;
+	padding: 0;
+	z-index: 3;
+  }
+  
+  @media (hover: hover) {
 	
-	body {
-	  background-color: var(--color-background);
-	  color: var(--color-foreground);
+	body > header a:hover,
+	body > header a:focus,
+	body > header label:hover,
+	body > header label:focus  {
+	  color: var(--color-hover);
+	  fill: var(--color-hover);
+	}
+	body > header a:active,
+	body > header label:active {
+	  color: var(--color-active);
+	  fill: var(--color-active);
+	}
+	
+  }
+  
+  body > header span {
+	position: absolute; top: -9999rem; left: -9999rem;
+  }
+  
+  body > header:has(input:checked) ~ main,
+  body > header:has(input:checked) ~ footer, 
+  body > header:has(input:checked) ~ svg {
+	display: none;
+  }
+  body > header:has(input:checked) + nav {
+	display: block;
+  }
+  body > header:has(input:not(:checked)) + nav {
+	display: none;
+  }
+  
+  @media (min-width: 28.5rem) {
+	
+	body > header {
+	  padding-top: 1.25rem;
+	}
+	
+	body > header h1 span ~ svg:first-of-type {
+	  display: none;
+	}
+	
+	body > header h1 span ~ svg:last-of-type {
+	  display: initial;
+	  z-index: -1;
+	}
+	
+	body > header:has(input:checked) ~ main {
+	  display: block;
+	}
+	
+	body > header:has(input:checked) ~ footer {
+	  display: flex;
+	}
+	
+	body > header:has(input:checked) ~ main,
+	body > header:has(input:checked) ~ footer {
+	  pointer-events: none;
+	  -webkit-user-select: none;
+	  user-select: none; 
+	}
+	
+	body:has(> header input:checked):after {
+	  background: var(--color-overlay);
+	  content: "";
+	  display: block;
+	  position: fixed;
+	  top: 0; left: 0;
+	  width: 100vw; height: 100%;
+	  z-index: 1;
+	}
+	
+  }
+  
+  
+  
+  /* -- body > nav ----------------------------------------------------------- */
+	
+	body > nav {
+	  background: var(--color-background);
 	  font-family: var(--font-serif);
-	  font-optical-sizing: auto;
-	  font-size: 1.125rem;
-	  font-weight: 400; 
-	  margin: 0 auto;
-	  max-width: var(--max-width);
-	  padding: 0 var(--spacing);
-	  position: relative;
+	  padding: 1rem 1rem 2rem 1rem;
+	  position: absolute;
+	  top: 0; right: 0;
+	  width: 100%;
+	  z-index: 2;
 	}
 	
-	@media (min-width: 60rem) {
+	body > nav ol {
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	}
+	
+	body > nav > *:last-child {
+	  margin-top: 2rem;
+	}
+	
+	@media (min-width: 28.5rem) {
 	  
-	  body:has(.spread) {
-		--max-width: 84rem;
+	  body > nav {
+		border-radius: 1rem;
+		box-shadow: 0 0.0625rem 0.25rem var(--color-shadow);
+		max-width: 26.5rem;
+		padding: 1rem 2rem 2rem 2rem;
+		position: absolute;
+		top: 1.0rem; right: 1rem;
+	  }
+	  
+	  body > nav:after {
+		content: " ";
+		display: block;
+		height: 0.0625rem;
+		position: relative; top: 5rem;
 	  }
 	  
 	}
 	
-	/* -- b, strong ------------------------------------------------------------ */
+	/* -- body > main ---------------------------------------------------------- */
 	
-	b,
-	strong, {
-	  font-weight: 700;
-	}
+	body > main {}
 	
-	/* -- i, em ---------------------------------------------------------------- */
+	/* -- body > footer -------------------------------------------------------- */
 	
-	i, 
-	em {
-	  font-style: italic;
-	}
-	
-	/* -- figure --------------------------------------------------------------- */
-	
-	figure {
-	  margin: 2rem 0 2rem 0;
-	}
-	
-	figcaption {
-	  font-size: 1rem;
-	  font-style: italic;
-	  padding: 0 1rem;
-	  text-align: center;
-	}
-	
-	/* -- h{n} ----------------------------------------------------------------- */
-	
-	h1 {
-	  font-size: 2.5rem;
-	  font-weight: 500;
-	}
-  
-	h2 {
-	  font-size: 2.0rem;
-	  font-weight: 600;
-	}
-  
-	h3 {
-	  font-size: 1.5rem;
-	  font-weight: 700;
-	}
-  
-	h4 {
-	  font-size: 1.25rem;
-	  font-weight: 700;
-	}
-  
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-	  font-family: var(--font-header);
-	  line-height: 100%;
-	  margin: 3rem 0 0.5rem 0;
-	}
-  
-	section > :first-child:is(h1, h2, h3, h4, h5, h6) {
-	  margin-top: 1rem;
-	}
-	
-	/* -- hr ------------------------------------------------------------------- */
-	
-	hr {
-	  width: 100%;
-	  height: auto;
-	}
-	
-	/* -- img ------------------------------------------------------------------ */
-	
-	img {
-	  width: 100%;
-	  height: auto;
-	}
-	
-	/* -- mark ----------------------------------------------------------------- */
-	
-	mark {
-	  color: var(--color-foreground);
-	  background-color: var(--color-mark);
-	}
-	
-	/* -- ol ------------------------------------------------------------------- */
-	
-	ol {
-	  list-style: outside;
-	  margin: 2rem 0 2rem 2rem;
-	}
-	
-	/* -- section -------------------------------------------------------------- */
-	
-	section {
-	  overflow-y: clip;
-	  margin: 2rem 0 3rem 0;
-	  padding: 2rem 0 2rem 0;
-	}
-  
-	
-	/* LAYOUT ------------------------------------------------------------------ */
-	
-	
-	/* -- body > header -------------------------------------------------------- */
-	
-	body > header {
+	body > footer {
 	  align-items: center;
 	  display: flex;
 	  font-family: var(--font-sans);
-	  padding-top: 0.5rem;
-	  position: relative;
+	  margin-top: 2rem;
+	  padding: 1rem 0 2rem 0;
 	}
 	
-	body > header a {
-	  margin-left: -0.5rem
-	}
-	
-	body > header a,
-	body > header a:link,
-	body > header a:visited,
-	body > header label {
-	  cursor: pointer;
-	  color: var(--color-foreground);
-	  fill: var(--color-foreground);
-	}
-	
-	body > header h1 {
-	  align-items: center;
-	  display:flex;
+	body > footer p {
 	  flex: 1;
-	  font-family: var(--font-sans);
-	  font-size: 1.25rem;
 	  font-weight: 500;
-	  height: 100%;
-	  justify-content: center;
-	  line-height: initial;
-	  margin: 0;
 	  overflow: hidden;
 	  text-overflow: ellipsis;
 	  white-space: nowrap;
 	}
 	
-	body > header h1 a {
-	  margin-left: 0;
-	  overflow: hidden;
-	  padding: 0 0.5rem;
-	  text-overflow: ellipsis;
-	}
-	body > header h1 span {
-	  display: block;
-	  position: relative;
-	  top: 0; left: 0;
-	}
-	body > header h1 span ~ svg:last-of-type {
-	  display: none;
+	body > footer a,
+	body > footer a:link,
+	body > footer a:visited {
+	  cursor: pointer;
+	  color: var(--color-foreground);
+	  fill: var(--color-foreground);
 	}
 	
-	body > header label {
-	  cursor: pointer;
-	  margin-right: -0.5rem;
-	  padding: 0;
-	  z-index: 3;
+	body > footer ul {
+	  align-items: center;
+	  display: flex;
+	  margin-right: -0.625rem;
+	  justify-content: flex-end;
+	}
+	
+	body > footer ul li:first-of-type:not(:has(a)) {
+	  flex: 1;
+	  font-family: var(--font-sans);
+	  overflow: hidden;
+	}
+	
+	body > footer ul li:first-of-type:not(:has(a)) span {
+	  display: inline-block; 
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	}
+	
+	body > footer ul  li {
+	  display: flex;
+	}
+	
+	body > footer ul a span {
+	  position: absolute; top: -9999rem; left: -9999rem;
 	}
 	
 	@media (hover: hover) {
 	  
-	  body > header a:hover,
-	  body > header a:focus,
-	  body > header label:hover,
-	  body > header label:focus  {
+	  body > footer a:hover,
+	  body > footer a:focus {
 		color: var(--color-hover);
 		fill: var(--color-hover);
 	  }
-	  body > header a:active,
-	  body > header label:active {
+	  body > footer a:active {
 		color: var(--color-active);
 		fill: var(--color-active);
 	  }
 	  
 	}
 	
-	body > header span {
-	  position: absolute; top: -9999rem; left: -9999rem;
-	}
 	
-	body > header:has(input:checked) ~ main,
-	body > header:has(input:checked) ~ footer, 
-	body > header:has(input:checked) ~ svg {
-	  display: none;
-	}
-	body > header:has(input:checked) + nav {
-	  display: block;
-	}
-	body > header:has(input:not(:checked)) + nav {
-	  display: none;
-	}
+	/* -- .icon-{n} ------------------------------------------------------------ */
 	
-	@media (min-width: 28.5rem) {
-	  
-	  body > header {
-		padding-top: 1.25rem;
-	  }
-	  
-	  body > header h1 span ~ svg:first-of-type {
-		display: none;
-	  }
-	  
-	  body > header h1 span ~ svg:last-of-type {
-		display: initial;
-		z-index: -1;
-	  }
-	  
-	  body > header:has(input:checked) ~ main {
-		display: block;
-	  }
-	  
-	  body > header:has(input:checked) ~ footer {
-		display: flex;
-	  }
-	  
-	  body > header:has(input:checked) ~ main,
-	  body > header:has(input:checked) ~ footer {
-		pointer-events: none;
-		-webkit-user-select: none;
-		user-select: none; 
-	  }
-	  
-	  body:has(> header input:checked):after {
-		background: var(--color-overlay);
-		content: "";
-		display: block;
-		position: fixed;
-		top: 0; left: 0;
-		width: 100vw; height: 100%;
-		z-index: 1;
-	  }
-	  
+	.icon {
+	  width: 2rem;
+	  height: 2rem;
+	  margin: 0.375rem;
 	}
-	
-	/* -- body > nav ----------------------------------------------------------- */
-	  
-	  body > nav {
-		background: var(--color-background);
-		font-family: var(--font-serif);
-		padding: 1rem 1rem 2rem 1rem;
-		position: absolute;
-		top: 0; right: 0;
-		width: 100%;
-		z-index: 2;
-	  }
-	  
-	  body > nav ol {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	  }
-	  
-	  body > nav > *:last-child {
-		margin-top: 2rem;
-	  }
-	  
-	  @media (min-width: 28.5rem) {
-		
-		body > nav {
-		  border-radius: 1rem;
-		  box-shadow: 0 0.0625rem 0.25rem var(--color-shadow);
-		  max-width: 26.5rem;
-		  padding: 1rem 2rem 2rem 2rem;
-		  position: absolute;
-		  top: 1.0rem; right: 1rem;
-		}
-		
-		body > nav:after {
-		  content: " ";
-		  display: block;
-		  height: 0.0625rem;
-		  position: relative; top: 5rem;
-		}
-		
-	  }
-	  
-	  /* -- body > main ---------------------------------------------------------- */
-	  
-	  body > main {}
-	  
-	  /* -- body > footer -------------------------------------------------------- */
-	  
-	  body > footer {
-		align-items: center;
-		display: flex;
-		font-family: var(--font-sans);
-		margin-top: 2rem;
-		padding: 1rem 0 2rem 0;
-	  }
-	  
-	  body > footer p {
-		flex: 1;
-		font-weight: 500;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	  }
-	  
-	  body > footer a,
-	  body > footer a:link,
-	  body > footer a:visited {
-		cursor: pointer;
-		color: var(--color-foreground);
-		fill: var(--color-foreground);
-	  }
-	  
-	  @media (hover: hover) {
-		
-		body > footer a:hover,
-		body > footer a:focus {
-		  color: var(--color-hover);
-		  fill: var(--color-hover);
-		}
-		body > footer a:active {
-		  color: var(--color-active);
-		  fill: var(--color-active);
-		}
-		
-	  }
-	  
-	  
-	  
-	  /* -- .social -------------------------------------------------------------- */
-	  
-	  .social {
-		align-items: center;
-		display: flex;
-		margin-right: -0.625rem;
-		justify-content: flex-end;
-	  }
-	  .social li:first-of-type:not(:has(a)) {
-		flex: 1;
-		font-family: var(--font-sans);
-		overflow: hidden;
-	  }
-	  .social li:first-of-type:not(:has(a)) span {
-		display: inline-block; 
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	  }
-	  .social  li {
-		display: flex;
-	  }
-	  .social a span {
-		position: absolute; top: -9999rem; left: -9999rem;
-	  }
-	  .social a,
-	  .social a:link {
-		color: var(--color-foreground);
-		fill: var(--color-foreground);
-	  }
-	  @media (hover: hover) {
-		.social a:hover,
-		.social a:focus  {
-		  color: var(--color-hover);
-		  fill: var(--color-hover);
-		}
-		.social a:active {
-		  color: var(--color-active);
-		  fill: var(--color-active);
-		}
-	  }

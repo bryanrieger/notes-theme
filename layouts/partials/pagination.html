@@ -1,13 +1,14 @@
 {{ $pag := $.Paginator }}
-
-<nav class="pagination" role="navigation">
-    {{ if or $pag.HasPrev $pag.HasNext }}
+<nav>
+  <ol id="pages">
+	{{ if or $pag.HasPrev $pag.HasNext }}
 		{{ if $pag.HasPrev }}
-			<a class="newer-posts" href="{{ $pag.Prev.URL }}">&larr; Newer Posts</a>
+		<li><a rel="prev" href="{{ $pag.Prev.URL }}">Back<svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="#back.icon" /></svg></a></li>
 		{{ end }}
-		<span class="page-number">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+		<li>Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</li>
 		{{ if $pag.HasNext }}
-			<a class="older-posts" href="{{ $pag.Next.URL }}">Older Posts &rarr;</a>
+		<li><a rel="next" href="{{ $pag.Next.URL }}">Next<svg class="icon" viewBox="0 0 32 32" width="32" height="32"><use href="#next.icon" /></svg></a></li>
 		{{ end }}
 	{{ end }}
+  </ol>
 </nav>

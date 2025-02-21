@@ -1,20 +1,49 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta content="{{ .Site.Author.name }}" name="author">
-
   <title>
       {{- block "title" . -}}
-		{{- .Site.Title -}}
-		{{- if and .Title (ne .Title .Site.Title) }}
-		- {{ .Title }}
-		{{- end -}}
+    {{- .Site.Title -}}
+    {{- if and .Title (ne .Title .Site.Title) }}
+    - {{ .Title }}
+    {{- end -}}
       {{- end -}}
   </title>
-
-  <link href="{{ "/assets/styles/default.css" | relURL }}?{{ .Site.Params.theme_seconds }}" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,viewport-fit=cover">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="robots" content="all">
+  <meta name="rating" content="General">
+  <meta name="author" content="Bryan Rieger">
+  <meta name="copyright" content="Copyright (c) Bryan Rieger. All rights reserved.">
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{{ site.keywords }}, {{ keywords }}">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="only light">
+  <link rel="preload" as="font" href="/assets/fonts/rooney/regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/assets/fonts/rooney/sans/medium.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="style" href="/assets/styles/default.css"> 
+  <link rel="preload" as="script" href="/assets/scripts/default.js"> 
+  <link rel="icon" href="/assets/icons/meta/icon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/assets/icons/meta/icon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/meta/icon.svg">
+  <link rel="mask-icon" href="/assets/icons/meta/icon+mask.png" color="#ffffff">
+  <link rel="apple-touch-icon" href="/assets/icons/meta/icon+touch.png" sizes="192x192">
+  <link rel="me" href="https://bryanrieger.com">
+  <link rel="me" href="https://micro.blog/bryanrieger">
+  <link rel="me" href="https://github.com/bryanrieger">
+  <link rel="me" href="https://instagram.com/bryanrieger">
+  <link rel="me" href="https://buttondown.com/bryanrieger">
+  <link rel="me" href="https://bsky.app/profile/bryanrieger.bsky.social">
+{{ if ne .Kind "home" }}
+  <link rel="alternate" href="{{ "feed.xml" | absURL }}" type="application/rss+xml" title="{{ $.Site.Title }}">
+  <link rel="alternate" href="{{ "feed.json" | absURL }}" type="application/json" title="{{ $.Site.Title }}">
+{{ end }}
+{{ if .Site.Params.has_podcasts }}
+  <link rel="alternate" href="{{ "podcast.xml" | absURL }}" type="application/rss+xml" title="Podcast">
+  <link rel="alternate" href="{{ "podcast.json" | absURL }}" type="application/json" title="Podcast">
+{{ end }}
+{{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" href="%s" type="%s" title="%s">` .Rel .Permalink .MediaType.Type $.Site.Title | safeHTML }}
+{{ end -}}
+  <link rel="stylesheet" href="/assets/styles/default.css" media="screen">
   <script async defer src="/assets/scripts/default.js"></script>
-
-	{{ partial "microblog_head.html" . }}
 </head>

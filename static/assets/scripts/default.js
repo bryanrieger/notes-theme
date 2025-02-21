@@ -152,7 +152,3 @@ if (document.readyState === "loading") {
 } else {
 	init();
 }
-
-if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register("/assets/scripts/worker.js");
-};
